@@ -1,0 +1,41 @@
+---
+alwaysApply: true
+description: shadcn ui component usage guidelines
+---
+
+# shadcn UI Component Guidelines
+
+This project uses **shadcn ui** for all UI elements. The shadcn ui configuration is stored in [components.json](mdc:components.json).
+
+## Initialization
+
+If shadcn ui is not initialized in the project, use the following command:
+
+```bash
+npx shadcn@latest init
+```
+
+## Adding Components
+
+If a particular component is not found in the project, use the following command to install it:
+
+```bash
+npx shadcn@latest add <component-name>
+```
+
+For example, to install the button component:
+
+```bash
+npx shadcn@latest add button
+```
+
+## Component Location
+
+All shadcn ui components are located in the `components/ui/` directory. When referencing or importing components, use the path alias `@/components/ui` as configured in [components.json](mdc:components.json).
+
+## Best Practices
+
+- Always use shadcn ui components instead of creating custom UI components from scratch
+- Check if a component exists in `components/ui/` before adding it
+- Follow the shadcn ui component patterns and styling conventions
+- Components are configured with the "new-york" style and use TypeScript (TSX)
