@@ -200,3 +200,4 @@ return <Comp {...props} />
 - Keep commits focused and atomic
 - Run lint and build before pushing
 - Include manual verification steps in PR descriptions
+- Everytime I ask about next.js, I want you to use Context7
