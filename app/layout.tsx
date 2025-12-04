@@ -67,7 +67,9 @@ export default function RootLayout({
         <body className="min-h-screen bg-background text-foreground">
           <header className="border-b">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-              <span className="text-lg font-semibold tracking-tight">AReal</span>
+              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-lg font-bold tracking-tight text-transparent">
+                AI Flashcards
+              </span>
               <div className="flex items-center gap-2">
                 <SignedOut>
                   <div className="flex items-center gap-2">
