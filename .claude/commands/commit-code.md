@@ -8,6 +8,6 @@ Use the following format for the commit message:
 #TICKET-ID: Short description of the changes made
 ```
 
-Dont Do:
+DONT DO:
 - Not include claude author
 
