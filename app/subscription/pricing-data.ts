@@ -1,0 +1,38 @@
+export const pricingPlans = [
+  {
+    name: "Free Plan",
+    price: "$0",
+    period: "forever",
+    description: "Get started with basic features",
+    features: [
+      "Create up to 10 flashcard decks",
+      "Basic AI-powered flashcard generation",
+      "Study mode with spaced repetition",
+      "Mobile and desktop access",
+    ],
+    cta: "Get Started",
+    variant: "outline" as const,
+    popular: false,
+    ctaLink: "/sign-up",
+  },
+  {
+    name: "Pro Plan",
+    price: "$2.99",
+    period: "per month",
+    description: "Unlock unlimited learning potential",
+    features: [
+      "Unlimited flashcard decks",
+      "Advanced AI-powered flashcard generation",
+      "Priority processing",
+      "Custom study schedules",
+      "Progress analytics and insights",
+      "Export to multiple formats",
+      "Ad-free experience",
+      "Priority support",
+    ],
+    cta: "Upgrade to Pro",
+    variant: "default" as const,
+    popular: true,
+    ctaLink: "/checkout",
+  },
+] as const;
