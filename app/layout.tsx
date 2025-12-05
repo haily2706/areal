@@ -68,13 +68,21 @@ export default function RootLayout({
         <body className="min-h-screen bg-background text-foreground">
           <header className="border-b">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-              <div className="flex items-center gap-8">
-                <Link href="/">
-                  <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-lg font-bold tracking-tight text-transparent">
-                    AI Flashcards
-                  </span>
-                </Link>
+              <Link href="/">
+                <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-lg font-bold tracking-tight text-transparent">
+                  AI Flashcards
+                </span>
+              </Link>
+              <div className="flex items-center gap-6">
                 <nav className="flex items-center gap-6">
+                  <SignedIn>
+                    <Link
+                      href="/dashboard"
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      Dashboard
+                    </Link>
+                  </SignedIn>
                   <Link
                     href="/subscription"
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -82,21 +90,21 @@ export default function RootLayout({
                     Pricing
                   </Link>
                 </nav>
-              </div>
-              <div className="flex items-center gap-2">
-                <SignedOut>
-                  <div className="flex items-center gap-2">
-                    <SignInButton mode="modal">
-                      <Button variant="outline">Sign In</Button>
-                    </SignInButton>
-                    <SignUpButton mode="modal">
-                      <Button>Sign Up</Button>
-                    </SignUpButton>
-                  </div>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
+                <div className="flex items-center gap-2">
+                  <SignedOut>
+                    <div className="flex items-center gap-2">
+                      <SignInButton mode="modal">
+                        <Button variant="outline">Sign In</Button>
+                      </SignInButton>
+                      <SignUpButton mode="modal">
+                        <Button>Sign Up</Button>
+                      </SignUpButton>
+                    </div>
+                  </SignedOut>
+                  <SignedIn>
+                    <UserButton />
+                  </SignedIn>
+                </div>
               </div>
             </div>
           </header>
