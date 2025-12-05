@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a58e709-9a0e-4661-9e60-bfd6bdfe98df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +84,7 @@
   </component>
   <component name="ai.zencoder.plugin.rag.RepoInfoWarningState">
     <option name="currentWarningState" value="true" />
-    <option name="lastCheckTime" value="1764484906262" />
+    <option name="lastCheckTime" value="1764910221696" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

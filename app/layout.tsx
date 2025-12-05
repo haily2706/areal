@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ClerkProvider,
   SignInButton,
@@ -67,9 +68,21 @@ export default function RootLayout({
         <body className="min-h-screen bg-background text-foreground">
           <header className="border-b">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-lg font-bold tracking-tight text-transparent">
-                AI Flashcards
-              </span>
+              <div className="flex items-center gap-8">
+                <Link href="/">
+                  <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-lg font-bold tracking-tight text-transparent">
+                    AI Flashcards
+                  </span>
+                </Link>
+                <nav className="flex items-center gap-6">
+                  <Link
+                    href="/subscription"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Pricing
+                  </Link>
+                </nav>
+              </div>
               <div className="flex items-center gap-2">
                 <SignedOut>
                   <div className="flex items-center gap-2">
