@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,43 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { pricingPlans } from "./pricing-data";
 
-const pricingPlans = [
-  {
-    name: "Free Plan",
-    price: "$0",
-    period: "forever",
-    description: "Get started with basic features",
-    features: [
-      "Create up to 10 flashcard decks",
-      "Basic AI-powered flashcard generation",
-      "Study mode with spaced repetition",
-      "Mobile and desktop access",
-    ],
-    cta: "Get Started",
-    variant: "outline" as const,
-    popular: false,
-  },
-  {
-    name: "Pro Plan",
-    price: "$2.99",
-    period: "per month",
-    description: "Unlock unlimited learning potential",
-    features: [
-      "Unlimited flashcard decks",
-      "Advanced AI-powered flashcard generation",
-      "Priority processing",
-      "Custom study schedules",
-      "Progress analytics and insights",
-      "Export to multiple formats",
-      "Ad-free experience",
-      "Priority support",
-    ],
-    cta: "Upgrade to Pro",
-    variant: "default" as const,
-    popular: true,
-  },
-];
+export const metadata: Metadata = {
+  title: "Pricing - AI Flashcards",
+  description: "Choose your plan. Start for free, upgrade when you're ready. Pro plan includes unlimited decks and advanced features.",
+};
+
+export const dynamic = "force-static";
 
 export default function SubscriptionPage() {
   return (
@@ -67,7 +40,10 @@ export default function SubscriptionPage() {
             <CardHeader>
               {plan.popular && (
                 <div className="mb-2">
-                  <span className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  <span
+                    className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground"
+                    aria-label="Most popular plan"
+                  >
                     Most Popular
                   </span>
                 </div>
@@ -90,8 +66,10 @@ export default function SubscriptionPage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button variant={plan.variant} className="w-full">
-                {plan.cta}
+              <Button variant={plan.variant} className="w-full" asChild>
+                <Link href={plan.ctaLink}>
+                  {plan.cta}
+                </Link>
               </Button>
             </CardFooter>
           </Card>

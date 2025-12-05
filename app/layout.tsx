@@ -13,8 +13,8 @@ import { Button } from "@/components/ui/button";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Clerk Next.js Quickstart",
-  description: "Authentication powered by Clerk",
+  title: "AI Flashcards",
+  description: "AI-powered flashcard application for smarter learning",
 };
 
 export default function RootLayout({
