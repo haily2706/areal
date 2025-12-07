@@ -4,6 +4,9 @@ import { useState } from "react";
 import { SectionCard } from "./components/section-card";
 import { CodeComparison } from "./components/code-comparison";
 import { Callout } from "./components/callout";
+import { ExampleContainer } from "./components/example-container";
+import { PracticeExercise } from "./components/practice-exercise";
+import { ModulePlaceholder } from "./components/module-placeholder";
 
 export default function TailwindPracticePage() {
   const [currentModule, setCurrentModule] = useState("1.1");
@@ -80,43 +83,45 @@ function Module1_1() {
       </SectionCard>
 
       {/* Spacing System */}
-      <section className="bg-card p-6 rounded-lg shadow border border-border">
-        <h3 className="text-xl font-medium mb-4 text-card-foreground">2. Spacing System (Padding & Margin)</h3>
-        <div className="space-y-4">
-          <p className="text-muted-foreground">
-            Tailwind uses a consistent spacing scale: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64...
-          </p>
+      <ExampleContainer
+        title="2. Spacing System (Padding & Margin)"
+        variant="default"
+      >
+        <p className="text-muted-foreground">
+          Tailwind uses a consistent spacing scale: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64...
+        </p>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-medium mb-2 text-card-foreground">Padding Examples:</h4>
-              <div className="space-y-2">
-                {/* Educational examples - keep original colors to demonstrate Tailwind's color system */}
-                <div className="bg-blue-100 p-1 rounded text-blue-900">p-1 (4px)</div>
-                <div className="bg-blue-200 p-2 rounded text-blue-900">p-2 (8px)</div>
-                <div className="bg-blue-300 p-4 rounded text-blue-900">p-4 (16px)</div>
-                <div className="bg-blue-400 p-6 rounded text-white">p-6 (24px)</div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-medium mb-2 text-card-foreground">Margin Examples:</h4>
-              <div className="bg-muted p-4 rounded">
-                {/* Educational examples - keep original colors */}
-                <div className="bg-green-200 p-2 mb-1 rounded text-green-900">mb-1</div>
-                <div className="bg-green-300 p-2 mb-2 rounded text-green-900">mb-2</div>
-                <div className="bg-green-400 p-2 mb-4 rounded text-white">mb-4</div>
-                <div className="bg-green-500 p-2 rounded text-white">Last item</div>
-              </div>
+        <div className="grid grid-cols-2 gap-6 mt-4">
+          <div>
+            <h4 className="font-medium mb-2 text-card-foreground">Padding Examples:</h4>
+            <div className="space-y-2">
+              {/* Educational examples - keep original colors to demonstrate Tailwind's color system */}
+              <div className="bg-blue-100 p-1 rounded text-blue-900">p-1 (4px)</div>
+              <div className="bg-blue-200 p-2 rounded text-blue-900">p-2 (8px)</div>
+              <div className="bg-blue-300 p-4 rounded text-blue-900">p-4 (16px)</div>
+              <div className="bg-blue-400 p-6 rounded text-white">p-6 (24px)</div>
             </div>
           </div>
 
+          <div>
+            <h4 className="font-medium mb-2 text-card-foreground">Margin Examples:</h4>
+            <div className="bg-muted p-4 rounded">
+              {/* Educational examples - keep original colors */}
+              <div className="bg-green-200 p-2 mb-1 rounded text-green-900">mb-1</div>
+              <div className="bg-green-300 p-2 mb-2 rounded text-green-900">mb-2</div>
+              <div className="bg-green-400 p-2 mb-4 rounded text-white">mb-4</div>
+              <div className="bg-green-500 p-2 rounded text-white">Last item</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4">
           <Callout variant="tip" title="Pro Tip:" icon="💡">
             Use directional spacing: <code className="bg-accent px-1 rounded text-accent-foreground">pt-4</code> (padding-top), <code className="bg-accent px-1 rounded text-accent-foreground">mr-2</code> (margin-right),
             <code className="bg-accent px-1 rounded text-accent-foreground">px-6</code> (padding horizontal), <code className="bg-accent px-1 rounded text-accent-foreground">my-3</code> (margin vertical)
           </Callout>
         </div>
-      </section>
+      </ExampleContainer>
 
       {/* Sizing System */}
       <section className="bg-card p-6 rounded-lg shadow border border-border">
@@ -195,15 +200,10 @@ function Module1_1() {
       </section>
 
       {/* Practice Exercise */}
-      <section className="bg-card p-6 rounded-lg shadow border-2 border-green-200">
-        <h3 className="text-xl font-medium mb-4 text-green-800">🎯 Practice Exercise</h3>
-        <p className="text-muted-foreground mb-4">
-          Try to recreate this card design using only Tailwind utilities:
-        </p>
-
-        {/* Target Design */}
-        <div className="mb-6 p-4 bg-muted rounded">
-          <h4 className="font-medium mb-2 text-card-foreground">Target Design:</h4>
+      <PracticeExercise
+        title="🎯 Practice Exercise"
+        description="Try to recreate this card design using only Tailwind utilities:"
+        targetDesign={
           <div className="bg-card p-6 rounded-xl shadow-lg border border-border max-w-sm">
             <div className="w-12 h-12 bg-blue-500 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-white font-bold text-xl">🎨</span>
@@ -216,19 +216,17 @@ function Module1_1() {
               Learn More
             </button>
           </div>
-        </div>
-
-        <div className="p-4 bg-accent/50 rounded border border-yellow-600">
-          <h4 className="font-medium text-foreground mb-2">Classes you'll need:</h4>
-          <div className="text-sm text-muted-foreground space-y-2">
+        }
+        hints={
+          <div className="space-y-2">
             <div><strong>Card container:</strong> <code className="bg-accent px-1 rounded text-accent-foreground">bg-white p-6 rounded-xl shadow-lg border border-gray-200 max-w-sm</code></div>
             <div><strong>Icon container:</strong> <code className="bg-accent px-1 rounded text-accent-foreground">w-12 h-12 bg-blue-500 rounded-lg mb-4 flex items-center justify-center</code></div>
             <div><strong>Title:</strong> <code className="bg-accent px-1 rounded text-accent-foreground">text-lg font-semibold text-gray-900 mb-2</code></div>
             <div><strong>Description:</strong> <code className="bg-accent px-1 rounded text-accent-foreground">text-gray-600 text-sm mb-4</code></div>
             <div><strong>Button:</strong> <code className="bg-accent px-1 rounded text-accent-foreground">bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors</code></div>
           </div>
-        </div>
-      </section>
+        }
+      />
     </div>
   );
 }
@@ -236,12 +234,11 @@ function Module1_1() {
 // Placeholder components for other modules
 function Module1_2() {
   return (
-    <div className="bg-card p-6 rounded-lg shadow border border-border">
-      <h2 className="text-2xl font-semibold text-card-foreground mb-4">
-        Module 1.2: Layout & Positioning
-      </h2>
-      <p className="text-muted-foreground">Coming soon! Complete Module 1.1 first.</p>
-    </div>
+    <ModulePlaceholder
+      moduleNumber="1.2"
+      moduleTitle="Layout & Positioning"
+      message="Coming soon! Complete Module 1.1 first."
+    />
   );
 }
 
