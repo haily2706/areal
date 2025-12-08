@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Choose your plan. Start for free, upgrade when you're ready. Pro plan includes unlimited decks and advanced features.",
 };
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export default function SubscriptionPage() {
   return (
